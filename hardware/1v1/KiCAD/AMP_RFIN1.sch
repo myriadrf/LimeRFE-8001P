@@ -1,0 +1,501 @@
+EESchema Schematic File Version 2
+LIBS:FrontEnd_5G-rescue
+LIBS:device
+LIBS:conn
+LIBS:linear
+LIBS:regul
+LIBS:74xx
+LIBS:cmos4000
+LIBS:adc-dac
+LIBS:memory
+LIBS:xilinx
+LIBS:microcontrollers
+LIBS:dsp
+LIBS:microchip
+LIBS:analog_switches
+LIBS:motorola
+LIBS:texas
+LIBS:intel
+LIBS:audio
+LIBS:interface
+LIBS:digital-audio
+LIBS:philips
+LIBS:display
+LIBS:cypress
+LIBS:siliconi
+LIBS:opto
+LIBS:contrib
+LIBS:valves
+LIBS:ADM7155_Addon-cache
+LIBS:LimeMicroBGD_Library
+LIBS:power
+LIBS:transistors
+LIBS:FrontEnd_5G-cache
+EELAYER 25 0
+EELAYER END
+$Descr A4 11693 8268
+encoding utf-8
+Sheet 6 20
+Title ""
+Date ""
+Rev ""
+Comp ""
+Comment1 ""
+Comment2 ""
+Comment3 ""
+Comment4 ""
+$EndDescr
+Text HLabel 1600 3650 0    59   Input ~ 0
+RF_IN
+Text HLabel 9200 3650 2    59   Output ~ 0
+RF_OUT
+Text HLabel 1600 5500 0    59   Input ~ 0
+BYP
+Wire Wire Line
+	6400 1600 6400 2950
+$Comp
+L +5V_RF #PWR880
+U 1 1 62942018
+P 6400 1600
+AR Path="/622FACBB/628FE62E/62942018" Ref="#PWR880"  Part="1" 
+AR Path="/55F3CC96/62981948/62942018" Ref="#PWR0529"  Part="1" 
+F 0 "#PWR0529" H 6400 1650 20  0001 C CNN
+F 1 "+5V_RF" H 6400 1700 30  0000 C CNN
+F 2 "" H 6400 1600 60  0000 C CNN
+F 3 "" H 6400 1600 60  0000 C CNN
+	1    6400 1600
+	1    0    0    -1  
+$EndComp
+$Comp
+L TQL9063 U93
+U 1 1 625FC06D
+P 5550 3750
+F 0 "U93" H 5300 3300 60  0000 C CNN
+F 1 "TQL9063" H 5800 3300 60  0000 C CNN
+F 2 "TQL9063" H 5550 5000 60  0001 C CNN
+F 3 "" H 5400 3750 60  0000 C CNN
+F 4 "Mouser" H 5550 5100 60  0001 C CNN "Vendor"
+F 5 "772-TQL9063" H 5550 5200 60  0001 C CNN "Vendor Part Number"
+F 6 "Qorvo" H 5550 5300 60  0001 C CNN "Manufacturer"
+F 7 "TQL9063" H 5550 5400 60  0001 C CNN "Manufacturer Part Number"
+F 8 "RF Amplifier 2.3-5.0 GHz High Gain 0.5W Driver Amplif" H 5550 5500 60  0001 C CNN "Description"
+F 9 "TQL9063" H 5550 4900 60  0001 C CNN "Component Value"
+	1    5550 3750
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	8050 3650 6100 3650
+$Comp
+L 27pF_0402_GCM1555C1H270FA16D C465
+U 1 1 625FC07E
+P 8250 3650
+F 0 "C465" V 8100 3750 50  0000 L CNN
+F 1 "27pF_0402_GCM1555C1H270FA16D" H 7900 4050 50  0001 L CNN
+F 2 "SMD0402" H 8250 3950 39  0001 C CNN
+F 3 "" H 8300 3750 60  0000 C CNN
+F 4 "Mouser" H 8250 4150 60  0001 C CNN "Vendor"
+F 5 "81-GCM1555C1H270FA6D" H 8200 4250 60  0001 C CNN "Vendor Part Number"
+F 6 "Murata Electronics" H 8250 4350 60  0001 C CNN "Manufacturer"
+F 7 "GCM1555C1H270FA16D" H 8300 4450 60  0001 C CNN "Manufacturer Part Number"
+F 8 "Multilayer Ceramic Capacitors MLCC - SMD/SMT 0402 27pF 50volts C0G 1%" H 8350 4550 60  0001 C CNN "Description"
+F 9 "27pF" V 8100 3500 50  0000 C CNN "Component Value"
+	1    8250 3650
+	0    1    1    0   
+$EndComp
+Wire Wire Line
+	3000 3650 5000 3650
+$Comp
+L 0R_0402 R287
+U 1 1 625FC08D
+P 4750 4900
+F 0 "R287" V 4700 5000 50  0000 C CNN
+F 1 "0R_0402" H 4750 5050 50  0001 C CNN
+F 2 "SMD0402" H 4750 5150 60  0001 C CNN
+F 3 "" V 4750 4900 60  0000 C CNN
+F 4 "Digi-Key" H 4750 5550 60  0001 C CNN "Vendor"
+F 5 "-" H 4750 5650 60  0001 C CNN "Vendor Part Number"
+F 6 "-" H 4750 5450 60  0001 C CNN "Manufacturer"
+F 7 "-" H 4750 5350 60  0001 C CNN "Manufacturer Part Number"
+F 8 "RES_0.0_OHM_0402_SMD" H 4750 5250 60  0001 C CNN "Description"
+F 9 "0R" H 4750 4890 50  0000 C CNN "Component Value"
+	1    4750 4900
+	0    1    1    0   
+$EndComp
+$Comp
+L GND #PWR0530
+U 1 1 625FC094
+P 3850 4450
+F 0 "#PWR0530" H 3850 4450 30  0001 C CNN
+F 1 "GND" H 3850 4380 30  0001 C CNN
+F 2 "" H 3850 4450 60  0000 C CNN
+F 3 "" H 3850 4450 60  0000 C CNN
+	1    3850 4450
+	0    1    1    0   
+$EndComp
+$Comp
+L GND #PWR0531
+U 1 1 625FC09A
+P 4825 3450
+F 0 "#PWR0531" H 4825 3450 30  0001 C CNN
+F 1 "GND" H 4825 3380 30  0001 C CNN
+F 2 "" H 4825 3450 60  0000 C CNN
+F 3 "" H 4825 3450 60  0000 C CNN
+	1    4825 3450
+	0    1    1    0   
+$EndComp
+$Comp
+L GND #PWR0532
+U 1 1 625FC0A0
+P 5550 4500
+F 0 "#PWR0532" H 5550 4500 30  0001 C CNN
+F 1 "GND" H 5550 4430 30  0001 C CNN
+F 2 "" H 5550 4500 60  0000 C CNN
+F 3 "" H 5550 4500 60  0000 C CNN
+	1    5550 4500
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	5550 4300 5550 4500
+Wire Wire Line
+	5000 3450 4825 3450
+Wire Wire Line
+	5000 3850 4750 3850
+Wire Wire Line
+	4750 3850 4750 4650
+Wire Wire Line
+	4450 4450 4750 4450
+Connection ~ 4750 4450
+Wire Wire Line
+	4050 4450 3850 4450
+Wire Wire Line
+	4750 5500 4750 5150
+Text Notes 3975 4700 0    59   ~ 0
+C7=100pF
+Text Notes 4800 5000 0    59   ~ 0
+R2=0 R
+Wire Wire Line
+	6100 3850 6400 3850
+Wire Wire Line
+	6400 3850 6400 4650
+Wire Wire Line
+	6700 4450 6400 4450
+Connection ~ 6400 4450
+$Comp
+L 0R_0402 R289
+U 1 1 625FC0BA
+P 6400 4900
+F 0 "R289" V 6350 5000 50  0000 C CNN
+F 1 "0R_0402" H 6400 5050 50  0001 C CNN
+F 2 "SMD0402" H 6400 5150 60  0001 C CNN
+F 3 "" V 6400 4900 60  0000 C CNN
+F 4 "Digi-Key" H 6400 5550 60  0001 C CNN "Vendor"
+F 5 "-" H 6400 5650 60  0001 C CNN "Vendor Part Number"
+F 6 "-" H 6400 5450 60  0001 C CNN "Manufacturer"
+F 7 "-" H 6400 5350 60  0001 C CNN "Manufacturer Part Number"
+F 8 "RES_0.0_OHM_0402_SMD" H 6400 5250 60  0001 C CNN "Description"
+F 9 "0R" H 6400 4890 50  0000 C CNN "Component Value"
+	1    6400 4900
+	0    1    1    0   
+$EndComp
+Wire Wire Line
+	6400 6650 6400 5150
+$Comp
+L GND #PWR0533
+U 1 1 625FC0C2
+P 7300 4450
+F 0 "#PWR0533" H 7300 4450 30  0001 C CNN
+F 1 "GND" H 7300 4380 30  0001 C CNN
+F 2 "" H 7300 4450 60  0000 C CNN
+F 3 "" H 7300 4450 60  0000 C CNN
+	1    7300 4450
+	0    -1   -1   0   
+$EndComp
+Wire Wire Line
+	7300 4450 7100 4450
+NoConn ~ 6100 4050
+NoConn ~ 5000 4050
+Text Notes 6675 4650 0    59   ~ 0
+C8=100pF
+Text Notes 6450 5000 0    59   ~ 0
+R3=0 R
+$Comp
+L 68nH_0603_0603CS-68NXJLW L47
+U 1 1 625FC0D3
+P 6400 3150
+F 0 "L47" H 6300 3150 50  0000 C CNN
+F 1 "68nH_0603_0603CS-68NXJLW" H 6400 3400 50  0001 C CNN
+F 2 "SMD0603" H 6400 3500 60  0001 C CNN
+F 3 "" H 6400 3150 60  0000 C CNN
+F 4 "Mouser" H 6400 4000 60  0001 C CNN "Vendor"
+F 5 "994-0603CS-68NXJLW" H 6400 3900 60  0001 C CNN "Vendor Part Number"
+F 6 "Coilcraft" H 6400 3800 60  0001 C CNN "Manufacturer"
+F 7 "0603CS-68NXJLW" H 6400 3700 60  0001 C CNN "Manufacturer Part Number"
+F 8 "Fixed Inductors 0603HP Hi Perfrmnce 100 nH 5 % 0.47 A" H 6400 3600 60  0001 C CNN "Description"
+F 9 "68nH" H 6250 3050 50  0000 C CNN "Component Value"
+	1    6400 3150
+	1    0    0    -1  
+$EndComp
+Text Notes 6450 3200 0    59   ~ 0
+L1=68nH
+$Comp
+L 1000pF_0402_GCM155R71H102KA37D C463
+U 1 1 625FC0E1
+P 6850 2850
+F 0 "C463" V 6900 2900 50  0000 L CNN
+F 1 "1000pF_0402_GCM155R71H102KA37D" H 6150 3550 50  0001 L CNN
+F 2 "SMD0402" H 6850 3450 60  0001 C CNN
+F 3 "" H 6850 2850 60  0000 C CNN
+F 4 "Mouser" H 6800 4050 60  0001 C CNN "Vendor"
+F 5 "81-GCM155R71H102KA7D" H 6800 3950 60  0001 C CNN "Vendor Part Number"
+F 6 "Murata Electronics" H 6850 3850 60  0001 C CNN "Manufacturer"
+F 7 "GCM155R71H102KA37D" H 6850 3750 60  0001 C CNN "Manufacturer Part Number"
+F 8 "Multilayer Ceramic Capacitors MLCC - SMD/SMT 0402 1000pF 50volts X7R 10%" H 6850 3650 60  0001 C CNN "Description"
+F 9 "1000pF" V 7050 2850 50  0000 C CNN "Component Value"
+	1    6850 2850
+	0    1    1    0   
+$EndComp
+$Comp
+L 1uF_0402_CC0402ZRY5V5BB105 C462
+U 1 1 625FC0EE
+P 6850 2400
+F 0 "C462" V 6950 2450 50  0000 L CNN
+F 1 "1uF_0402_CC0402ZRY5V5BB105" H 6250 2950 50  0001 L CNN
+F 2 "SMD0402" H 6850 2850 60  0001 C CNN
+F 3 "" H 6850 2400 60  0000 C CNN
+F 4 "Mouser" H 6850 3450 60  0001 C CNN "Vendor"
+F 5 "603-CC402ZRY5V5BB105" H 6850 3350 60  0001 C CNN "Vendor Part Number"
+F 6 "Yageo" H 6850 3250 60  0001 C CNN "Manufacturer"
+F 7 "CC0402ZRY5V5BB105" H 6850 3150 60  0001 C CNN "Manufacturer Part Number"
+F 8 "Multilayer Ceramic Capacitors MLCC - SMD/SMT 1.0uF 6.3V Y5V -20/+80%" H 6850 3050 60  0001 C CNN "Description"
+F 9 "1uF" V 6950 2250 50  0000 C CNN "Component Value"
+	1    6850 2400
+	0    1    1    0   
+$EndComp
+$Comp
+L GND #PWR0534
+U 1 1 625FC102
+P 7250 2850
+F 0 "#PWR0534" H 7250 2850 30  0001 C CNN
+F 1 "GND" H 7250 2780 30  0001 C CNN
+F 2 "" H 7250 2850 60  0000 C CNN
+F 3 "" H 7250 2850 60  0000 C CNN
+	1    7250 2850
+	0    -1   -1   0   
+$EndComp
+$Comp
+L GND #PWR0535
+U 1 1 625FC108
+P 7250 2400
+F 0 "#PWR0535" H 7250 2400 30  0001 C CNN
+F 1 "GND" H 7250 2330 30  0001 C CNN
+F 2 "" H 7250 2400 60  0000 C CNN
+F 3 "" H 7250 2400 60  0000 C CNN
+	1    7250 2400
+	0    -1   -1   0   
+$EndComp
+Wire Wire Line
+	6100 3450 6400 3450
+Wire Wire Line
+	6400 3450 6400 3350
+Wire Wire Line
+	6400 2850 6650 2850
+Wire Wire Line
+	6400 2400 6650 2400
+Connection ~ 6400 2850
+Wire Wire Line
+	7050 2400 7250 2400
+Wire Wire Line
+	7050 2850 7250 2850
+Text Notes 6575 2725 0    59   ~ 0
+C6=1000pF
+Text Notes 6675 2250 0    59   ~ 0
+C5=1uF
+Connection ~ 6400 2400
+$Comp
+L 100pF_0402_ECJ-0EC1H101J C460
+U 1 1 625FC120
+P 2800 3650
+F 0 "C460" V 2900 3750 50  0000 L CNN
+F 1 "100pF_0402_ECJ-0EC1H101J" H 2350 4050 50  0001 L CNN
+F 2 "SMD0402" H 2800 3950 39  0001 C CNN
+F 3 "" H 2850 3750 60  0000 C CNN
+F 4 "Mouser" H 2800 4150 60  0001 C CNN "Vendor"
+F 5 "667-ECJ-0EC1H101J" H 2750 4250 60  0001 C CNN "Vendor Part Number"
+F 6 "Murata Electronics" H 2800 4350 60  0001 C CNN "Manufacturer"
+F 7 "ECJ-0EC1H101J" H 2850 4450 60  0001 C CNN "Manufacturer Part Number"
+F 8 "Multilayer Ceramic Capacitors MLCC - SMD/SMT 100PF 50V 5% 0402" H 2900 4550 60  0001 C CNN "Description"
+F 9 "100pF" V 2600 3650 50  0000 C CNN "Component Value"
+	1    2800 3650
+	0    1    1    0   
+$EndComp
+$Comp
+L 100pF_0402_ECJ-0EC1H101J C464
+U 1 1 625FC12D
+P 6900 4450
+F 0 "C464" V 7000 4550 50  0000 L CNN
+F 1 "100pF_0402_ECJ-0EC1H101J" H 6450 4850 50  0001 L CNN
+F 2 "SMD0402" H 6900 4750 39  0001 C CNN
+F 3 "" H 6950 4550 60  0000 C CNN
+F 4 "Mouser" H 6900 4950 60  0001 C CNN "Vendor"
+F 5 "667-ECJ-0EC1H101J" H 6850 5050 60  0001 C CNN "Vendor Part Number"
+F 6 "Murata Electronics" H 6900 5150 60  0001 C CNN "Manufacturer"
+F 7 "ECJ-0EC1H101J" H 6950 5250 60  0001 C CNN "Manufacturer Part Number"
+F 8 "Multilayer Ceramic Capacitors MLCC - SMD/SMT 100PF 50V 5% 0402" H 7000 5350 60  0001 C CNN "Description"
+F 9 "100pF" V 6700 4450 50  0000 C CNN "Component Value"
+	1    6900 4450
+	0    1    1    0   
+$EndComp
+$Comp
+L 100pF_0402_ECJ-0EC1H101J C461
+U 1 1 625FC13A
+P 4250 4450
+F 0 "C461" V 4350 4550 50  0000 L CNN
+F 1 "100pF_0402_ECJ-0EC1H101J" H 3800 4850 50  0001 L CNN
+F 2 "SMD0402" H 4250 4750 39  0001 C CNN
+F 3 "" H 4300 4550 60  0000 C CNN
+F 4 "Mouser" H 4250 4950 60  0001 C CNN "Vendor"
+F 5 "667-ECJ-0EC1H101J" H 4200 5050 60  0001 C CNN "Vendor Part Number"
+F 6 "Murata Electronics" H 4250 5150 60  0001 C CNN "Manufacturer"
+F 7 "ECJ-0EC1H101J" H 4300 5250 60  0001 C CNN "Manufacturer Part Number"
+F 8 "Multilayer Ceramic Capacitors MLCC - SMD/SMT 100PF 50V 5% 0402" H 4350 5350 60  0001 C CNN "Description"
+F 9 "100pF" V 4050 4450 50  0000 C CNN "Component Value"
+	1    4250 4450
+	0    1    1    0   
+$EndComp
+Text HLabel 1600 6650 0    59   Input ~ 0
+SD
+$Comp
+L 10K_0402 R285
+U 1 1 62601764
+P 3800 5800
+F 0 "R285" H 3790 5870 50  0000 C CNN
+F 1 "10K_0402" H 3800 5950 50  0001 C CNN
+F 2 "SMD0402" H 3800 6050 60  0001 C CNN
+F 3 "" V 3800 5800 60  0000 C CNN
+F 4 "Digi-Key" H 3800 6450 60  0001 C CNN "Vendor"
+F 5 "-" H 3800 6550 60  0001 C CNN "Vendor Part Number"
+F 6 "-" H 3800 6350 60  0001 C CNN "Manufacturer"
+F 7 "-" H 3800 6250 60  0001 C CNN "Manufacturer Part Number"
+F 8 "-" H 3800 6150 60  0001 C CNN "Description"
+F 9 "10K" H 3800 5790 50  0000 C CNN "Component Value"
+	1    3800 5800
+	0    -1   -1   0   
+$EndComp
+$Comp
+L GND #PWR0536
+U 1 1 62601EDF
+P 3800 6100
+F 0 "#PWR0536" H 3800 6100 30  0001 C CNN
+F 1 "GND" H 3800 6030 30  0001 C CNN
+F 2 "" H 3800 6100 60  0000 C CNN
+F 3 "" H 3800 6100 60  0000 C CNN
+	1    3800 6100
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	3800 6050 3800 6100
+Wire Wire Line
+	3800 5550 3800 5500
+Connection ~ 3800 5500
+$Comp
+L 10K_0402 R286
+U 1 1 62602102
+P 3800 6950
+F 0 "R286" H 3790 7020 50  0000 C CNN
+F 1 "10K_0402" H 3800 7100 50  0001 C CNN
+F 2 "SMD0402" H 3800 7200 60  0001 C CNN
+F 3 "" V 3800 6950 60  0000 C CNN
+F 4 "Digi-Key" H 3800 7600 60  0001 C CNN "Vendor"
+F 5 "-" H 3800 7700 60  0001 C CNN "Vendor Part Number"
+F 6 "-" H 3800 7500 60  0001 C CNN "Manufacturer"
+F 7 "-" H 3800 7400 60  0001 C CNN "Manufacturer Part Number"
+F 8 "-" H 3800 7300 60  0001 C CNN "Description"
+F 9 "10K" H 3800 6940 50  0000 C CNN "Component Value"
+	1    3800 6950
+	0    -1   -1   0   
+$EndComp
+$Comp
+L GND #PWR0537
+U 1 1 62602108
+P 3800 7250
+F 0 "#PWR0537" H 3800 7250 30  0001 C CNN
+F 1 "GND" H 3800 7180 30  0001 C CNN
+F 2 "" H 3800 7250 60  0000 C CNN
+F 3 "" H 3800 7250 60  0000 C CNN
+	1    3800 7250
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	3800 7200 3800 7250
+Wire Wire Line
+	3800 6700 3800 6650
+Connection ~ 3800 6650
+Wire Wire Line
+	3600 6650 6400 6650
+Wire Wire Line
+	3600 5500 4750 5500
+$Comp
+L 10K_0402 R283
+U 1 1 626024C5
+P 3350 5500
+F 0 "R283" H 3340 5570 50  0000 C CNN
+F 1 "10K_0402" H 3350 5650 50  0001 C CNN
+F 2 "SMD0402" H 3350 5750 60  0001 C CNN
+F 3 "" V 3350 5500 60  0000 C CNN
+F 4 "Digi-Key" H 3350 6150 60  0001 C CNN "Vendor"
+F 5 "-" H 3350 6250 60  0001 C CNN "Vendor Part Number"
+F 6 "-" H 3350 6050 60  0001 C CNN "Manufacturer"
+F 7 "-" H 3350 5950 60  0001 C CNN "Manufacturer Part Number"
+F 8 "-" H 3350 5850 60  0001 C CNN "Description"
+F 9 "10K" H 3350 5490 50  0000 C CNN "Component Value"
+	1    3350 5500
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	3100 5500 1600 5500
+$Comp
+L 10K_0402 R284
+U 1 1 626025C9
+P 3350 6650
+F 0 "R284" H 3340 6720 50  0000 C CNN
+F 1 "10K_0402" H 3350 6800 50  0001 C CNN
+F 2 "SMD0402" H 3350 6900 60  0001 C CNN
+F 3 "" V 3350 6650 60  0000 C CNN
+F 4 "Digi-Key" H 3350 7300 60  0001 C CNN "Vendor"
+F 5 "-" H 3350 7400 60  0001 C CNN "Vendor Part Number"
+F 6 "-" H 3350 7200 60  0001 C CNN "Manufacturer"
+F 7 "-" H 3350 7100 60  0001 C CNN "Manufacturer Part Number"
+F 8 "-" H 3350 7000 60  0001 C CNN "Description"
+F 9 "10K" H 3350 6640 50  0000 C CNN "Component Value"
+	1    3350 6650
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	3100 6650 1600 6650
+Wire Notes Line
+	3100 5250 4000 5250
+Wire Notes Line
+	4000 5250 4000 6200
+Wire Notes Line
+	4000 6200 3100 6200
+Wire Notes Line
+	3100 6200 3100 5250
+Wire Notes Line
+	3100 6400 4000 6400
+Wire Notes Line
+	4000 6400 4000 7350
+Wire Notes Line
+	3100 7350 3100 6400
+Wire Notes Line
+	4000 7350 3100 7350
+Text Notes 2750 6350 0    59   ~ 0
+Voltage devider and pull-down resistor
+Text Notes 2700 5200 0    59   ~ 0
+Voltage devider and pull-down resistor
+Text Notes 1350 4950 0    59   ~ 0
+BYP=0,  SD=0  => LNA ON,  Bypass OFF\nBYP=0,  SD=1  => LNA OFF,  Bypass OFF\nBYP=1,  SD=X  => LNA OFF,  Bypass ON
+Wire Wire Line
+	1600 3650 2600 3650
+Wire Wire Line
+	8450 3650 9200 3650
+$EndSCHEMATC
