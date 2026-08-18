@@ -1,9 +1,9 @@
 # Copyright date and release version should be updated accordingly!
 
 project = 'LimeRFE 8001P'
-copyright = '2023-2025 Lime Microsystems'
+copyright = '2023-2026 Lime Microsystems'
 author = 'Lime Microsystems'
-release = 'latest'
+release = 'v1.1'
 
 # These are used for the "Edit on GitHub" links.
 # github_repo_path should be set to the branch + path to the docs.
