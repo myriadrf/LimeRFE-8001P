@@ -2,17 +2,14 @@ Hardware Setup
 ##############
 
 Host Interface
-**************
+==============
 
-There are 2 possible ways to control the LimeRFE 8001P board:
-
-* Through a master control board, such as LimeSDR-PCIe-5G – communication is established over the SPI interface, with the master control board connected to the J28 connector. In this documentation this type of communication is denoted SDR.
-* Directly through USB – using the micro USB connector (CON1).
+The LimeRFE 8001P board is controlled from the host PC through USB, using the micro USB connector (CON1).
 
 See :doc:`software/setup` for the connection procedure.
 
 Cooling
-*******
+=======
 
 The LimeRFE 8001P board ships with a pre-installed heatsink. Under normal ambient temperature conditions, passive cooling is sufficient to maintain stable and reliable board operation.
 
@@ -30,37 +27,63 @@ Default heatsink is `Wakefield Thermal 558-75AB`_:
 .. note::
    In the event of errors, instability or reduced performance, check the board temperature to ensure that it is within the specified operating range.
 
+.. _power-connections:
+
 Power Connections
-*****************
+=================
 
-The board can be supplied from:
+The recommended power supply option is an external 12 V power supply:
 
-* an external 5 V power supply, connected to J2,
-* an external 12 V power supply, connected to J27, J30 or J45 (an on-board DC-DC converter generates 5 V),
-* USB (CON1). This option is not recommended, because USB cannot provide enough current for the RF devices.
+#. Connect the 12 V power supply to J45 or to the barrel connector J30 (v1.1 only).
+#. Place the JP1 jumper on pins 1-2 (top position). The board is then supplied from the DC-DC converter.
+#. Place the JP2 jumper on pins 1-2 (top position). The RF devices (amplifiers) are then supplied from the board 5 V supply.
 
-The RF devices (amplifiers) have a separate 5 V supply selection: they can be supplied from the board 5 V supply, from USB, or from an external 5 V power supply connected to J24.
-The supply sources are selected with jumpers on the JP1 (board supply) and JP2 (RF devices supply) headers, shown in Figure 2.
+The power supply connectors and the JP1 and JP2 headers are shown in Figure 3. The jumper positions are the same on both board versions.
 
-.. figure:: /images/LimeRFE-8001P_v1.1_prw_con.png
-  :width: 600
+.. tabs::
 
-  Figure 2. LimeRFE 8001P v1.1 power supply connectors and source selection headers
+   .. tab:: v1.1
+
+      .. figure:: /images/LimeRFE-8001P_v1.1_prw_con.png
+         :width: 200
+
+         Figure 3: LimeRFE 8001P v1.1 power supply connectors and source selection headers
+
+   .. tab:: v1.0
+
+      .. figure:: /images/LimeRFE-8001P_v1.0_prw_con.png
+
+         Figure 3: LimeRFE 8001P v1.0 power supply connectors and source selection headers
 
 .. warning::
    Do not place more than one jumper on each of the JP1 and JP2 headers.
 
-For the jumper positions and recommended configurations, see :doc:`/reference/v1.1/power`.
+   Do not use USB (CON1) as the power supply. USB cannot provide enough current for the RF devices.
+
+For all other power supply options, see :doc:`/reference/v1.1/power` (v1.1) or :doc:`/reference/v1.0/power` (v1.0).
 
 
 
 RF Connections
-**************
+==============
 
-.. figure:: /images/LimeRFE-8001P_v1.1_rfcons.png
-  :width: 600
-  
-  Figure 3: LimeRFE 8001P board top with RF connector positions
+.. tabs::
+
+   .. tab:: v1.1
+
+      .. figure:: /images/LimeRFE-8001P_v1.1_rfcons.png
+         :width: 600
+
+         Figure 4: LimeRFE 8001P v1.1 board top with RF connector positions
+
+   .. tab:: v1.0
+
+      .. figure:: /images/LimeRFE-8001P_v1.0_rfcons.png
+         :width: 600
+
+         Figure 4: LimeRFE 8001P v1.0 board top with RF connector positions
+
+The RF connectors have the same designators on both board versions.
 
 .. list-table:: Table 1. RF Connectors
    :header-rows: 1

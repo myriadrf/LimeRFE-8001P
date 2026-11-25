@@ -5,7 +5,7 @@ Each channel of the LimeRFE 8001P has a transmitter (TX) path, which linearizes 
 The description below is given for channel 1 (CH#1). Channel 2 (CH#2) is identical; the corresponding connectors are listed in brackets.
 
 Connectors
-**********
+==========
 
 * J6, IFTX1 (J9, IFTX2) – IF input.
 * J15, TXRX1 (J20, TXRX2) – RF output in TX mode.
@@ -15,7 +15,7 @@ Connectors
    The maximum allowed input power at IFTX1 and IFTX2 depends on the AMP1 and AMP2 state, and is as low as –14 dBm when the amplifier is on. See :ref:`absolute-maximum-ratings`.
 
 Sub-blocks
-**********
+==========
 
 Starting from the IFTX1 connector, the TX path of CH#1 consists of the following sub-blocks:
 
@@ -46,7 +46,7 @@ Key TX characteristics of CH#1 are given in the Key Characteristics table on the
 .. _tx-linearization:
 
 Linearization
-*************
+=============
 
 The linearization block linearizes an amplifier, using the `SC1905`_ RF power amplifier linearizer.
 It has two inputs (RFIN and RFFB) and one output (RFOUT):
@@ -66,7 +66,7 @@ The amplifier to be linearized can be:
 The linearization block can be turned off by software, or bypassed by fitting 0 |Omega| resistors (see :ref:`orx-reconfiguration`). Linearization supports FDD and TDD OFDM signals with bandwidths up to 100 MHz.
 
 Signal Paths
-************
+============
 
 .. list-table:: Table 4. TX configurations and corresponding IF and RF signal paths
    :header-rows: 1

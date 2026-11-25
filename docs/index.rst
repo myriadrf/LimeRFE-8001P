@@ -8,23 +8,34 @@ Introduction
    Introduction <self>
    user/index
    reference/index
+   developer/index
 
 
-.. figure:: images/LimeRFE_8001P_v1.1_photo.jpg
+.. figure:: /images/LimeRFE_8001P_v1.1_photo.jpg
    :alt: LimeRFE 8001P board
    :align: center
    :width: 600
 
 
-LimeRFE 8001P board is a two channel RF front end module capable of frequency conversion, RF signal Amplification and Power Amplifier linearization. Both internal (on board) driver amplifiers and external (off board) amplifiers can be linearized.  
+The LimeRFE 8001P is a two-channel RF front end board, which converts signals between the IF band of a transceiver and the RF band.
+Each channel has a transmit (TX), a receive (RX) and an observation (ORX) path.
+The TX path includes on-board predriver and driver amplifiers, and the RX path a low noise amplifiers.
+
+Frequency conversion between the IF and RF bands is done on the board by the Lime Microsystems `LMS8001B`_ high-linearity mixer, one per channel.
+The LMS8001B integrates the mixers and a PLL that generates the local oscillator (LO) signal, so no external LO is required. An external LO can optionally be applied through the EXT_LO connectors.
+In each LMS8001B, separate mixer channels are used for the TX up-conversion and the RX and ORX down-conversion, and all of them are configured from the GUI.
+
+Power amplifier linearization is performed on the board by the SC1905 RF power amplifier linearizer, using the ORX path as feedback.
+Both the on-board driver amplifiers and external power amplifiers can be linearized, with FDD and TDD OFDM signals with bandwidths up to 100 MHz.
+The board is controlled over USB with the LimeRFE 8001P GUI.
 
 Specifications
-**************
+==============
 
 .. _absolute-maximum-ratings:
 
 Absolute maximum ratings
-========================
+------------------------
 
 .. list-table:: Maximum input signals for IF, RF and other AC (periodic) signal connectors 
    :header-rows: 1
@@ -195,7 +206,7 @@ Absolute maximum ratings
        Critical component is U38.
 
 Key Characteristics
-===================
+-------------------
 
 .. list-table:: The most important characteristics of the LimeRFE 8001P board
    :header-rows: 1
@@ -263,14 +274,13 @@ Key Characteristics
 
 
 Digital Interface
-=================
+-----------------
 
 * USB – micro USB type B connector (CON1) or USB pin header (J29).
-* SPI – SPI1 connector (J28), for control from a master control board, such as LimeSDR-PCIe-5G.
 * I2C – I2C connector (J1), for front panel control.
 
 Power Supply
-============
+------------
 
 .. list-table::
    :header-rows: 1
@@ -290,16 +300,11 @@ Power Supply
    * - JP2
      - RF devices supply source selection (board supply, USB or external 5 V)
 
-.. TODO: add the maximum recommended supply voltages, if available from the designers.
-
 .. warning::
     USB cannot provide enough current for all RF devices. Use an external 5 V or 12 V power supply, see :doc:`/reference/v1.1/power`.
 
 Environmental
-=============
-
-.. TODO: confirm the environmental ratings with the designers. These values are the same as for LimeRFE.
-
+-------------
 
 .. list-table:: 
    :header-rows: 1
@@ -320,15 +325,15 @@ Environmental
 
 
 Mechanical
-==========
+----------
 
 Board size 157.2 x 163.3 mm and weight 304 g
 
 Features
-********
+========
 
 Devices
-=======
+-------
 
 * RF band, TX 
 
@@ -439,13 +444,13 @@ Devices
   * External signal control RF switches (for TDD operation), Skyworks’ SKY13330-397LF
 
 Clock network
-=============
+-------------
 
 * Both channels can be synchronized to internal 40 MHz crystal oscillator
 * Both channels can be synchronized o an external reference signal (e.g. 10 MHz)
 
 Linearization 
-=============
+-------------
 
 * Supports linearization of amplifier devices using FDD and TDD OFDM signals with bandwidths up to 100 MHz
 * Supports linearization of GaN amplifiers and amplifiers fabricated using other technologies
@@ -453,13 +458,13 @@ Linearization
 * Supports linearization of external amplifiers connected to the TXRX connector 
 
 RF switching
-============
+------------
 
 * TDD operation can be controlled via the GUI 
 * TDD operation can also be controlled via external signals
 
 General user inputs/outputs
-===========================
+---------------------------
 
 * 1x GPIO header
 * 4x TDD control headers
@@ -468,7 +473,7 @@ General user inputs/outputs
 * 2x SPI headers
 
 Connectors
-===========
+-----------
 
 * Micro USB type B socket (CON1) + USB pin header (J29)
 * 6x SMAs for 2 channels of RF (TXRX, ORX and dedicated RX)
@@ -479,26 +484,28 @@ Connectors
  
 
 Purchasing
-**********
+==========
 
 Please contact the `Lime Microsystems`_ for purchasing information.
 
 Regulatory
-**********
+==========
 
 RoHS
-====
+----
 
 This product is RoHS compliant and does not contain hazardous substances as defined by Directive 2011/65/EU.
 
 WEEE
-====
+----
 
 This product must be disposed of properly according to local regulations. Do not dispose of with general household waste.
 
 RF Transmission Notice
-======================
+----------------------
 
 .. warning::
    Operating RF transmitting equipment may require appropriate licensing. Users are responsible for ensuring compliance with local regulations. Unauthorised transmission may result in legal penalties.
+
+.. _LMS8001B: https://github.com/myriadrf/LMS8001-docs
 

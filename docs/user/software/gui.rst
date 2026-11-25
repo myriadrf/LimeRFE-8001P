@@ -1,35 +1,33 @@
 GUI
 ###
 
-The main control window of the LimeRFE 8001P GUI is shown in Figure 4.
+The main control window of the LimeRFE 8001P GUI is shown in Figure 5.
 
 .. figure:: /images/LimeRFE-8001P_GUI.png
   :width: 600
 
-  Figure 4: LimeRFE 8001P GUI main control window – all panels described
+  Figure 5: LimeRFE 8001P GUI main control window – all panels described
 
 The **Main** tab (upper left corner of the window) is active during setup of the board. Below this tab, the following panels are visible:
 
-* **Communication** – selects the connection type, SDR or Direct (USB).
-* **USB** and **Port** – select and open the COM port for the direct USB connection.
+* **Communication** – selects the connection type. Select **Direct (USB)**.
+* **USB** and **Port** – select and open the serial port (``/dev/ttyACM*``) for the direct USB connection.
 * **Configuration** – saves and loads the board configuration.
 * **Synchronize** – synchronizes the GUI with the current board configuration.
 * **Data** – shows and changes the board control register. It has two tabs, Simple and Detailed.
 * **Which channel is controlled in GUI** – selects channel 1 or channel 2. This selection tells the GUI which LMS8001B and SC1905 to control.
 * **Message Display** – shows status messages.
 
-.. TODO: confirm the Configuration and Synchronize panel functions with the designers (descriptions are based on LimeRFE GUI).
-
 The **SC1905** tab opens the SC1905 linearizer control window. The **Modules** menu opens the LMS8001 control window. Both are described in :doc:`setup`.
 
 Data Panel
-**********
+==========
 
 The Data panel shows the state of the daisy chain register, which is the status and control register of the LimeRFE 8001P board.
 Click the **Read** button to read the current register state from the board. The register bits are shown as checked and unchecked fields, and the corresponding hex values are written in the Message Display panel.
 Change the fields and click the **Apply** button to write the new configuration to the board.
 
-The Data panel has two tabs, shown in Figure 5 and Figure 6:
+The Data panel has two tabs, shown in Figure 6 and Figure 7:
 
 * **Simple** – shows a block diagram of one channel of the board. This view is recommended for understanding the main RF blocks of the board.
 * **Detailed** – shows all register bits for both channels, and provides more control parameters.
@@ -41,14 +39,14 @@ The Data panel has two tabs, shown in Figure 5 and Figure 6:
       .. figure:: /images/LimeRFE-8001P_GUI_simple.png
          :width: 600
 
-         Figure 5: LimeRFE 8001P GUI main control window, Data panel – Simple tab active
+         Figure 6: LimeRFE 8001P GUI main control window, Data panel – Simple tab active
 
    .. tab:: Detailed
 
       .. figure:: /images/LimeRFE-8001P_GUI_detaled.png
          :width: 600
 
-         Figure 6: LimeRFE 8001P GUI main control window, Data panel – Detailed tab active
+         Figure 7: LimeRFE 8001P GUI main control window, Data panel – Detailed tab active
 
 The correspondence of the fields in the Simple and Detailed tabs is given in Table 2.
 

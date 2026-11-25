@@ -4,7 +4,7 @@ Peripheral Interfaces
 The LimeRFE 8001P is controlled by the RP2040 microcontroller (MCU, U115). The MCU communicates with the host and other boards through the interfaces described below.
 
 SPI1 Connector
-**************
+==============
 
 SPI1 is the external bus between the MCU and an external control board, such as LimeSDR-PCIe-5G. The MCU on the LimeRFE 8001P is the slave on the SPI1 bus.
 The SPI1 bus is available on the 12-pin PMOD connector J28. The signals pass through the level shifters U24 and U163.
@@ -58,7 +58,7 @@ J28 pinout is given in Table 10.
    Please use a shielded data cable when connecting the LimeRFE 8001P to another board.
 
 SPI2 Connector
-**************
+==============
 
 SPI2 is the internal bus between the MCU and the devices on the board (LMS8001B, SC1905 and ADF4002). The MCU is the master on the SPI2 bus.
 The SPI2 bus is available on the 3x2 pin header J19. The allowed voltage for this connector is 3.3 V. J19 pinout is given in Table 11.
@@ -82,14 +82,14 @@ The SPI2 bus is available on the 3x2 pin header J19. The allowed voltage for thi
      - MOSI_2
      - Master output, slave input
    * - 5
-     - NC
-     - Not connected
+     - RESET
+     - MCU reset
    * - 6
      - GND
      - Ground
 
 I2C Connector
-*************
+=============
 
 The I2C connector J1 (1x5 pin header) is intended for front panel control. The signals pass through the level shifters U153 and U154.
 The voltage applied to pin 2 (VDD_CON_J1) sets the I2C signal levels and must be in the range 2.3 – 5.5 V. J1 pinout is given in Table 12.
@@ -111,7 +111,7 @@ The voltage applied to pin 2 (VDD_CON_J1) sets the I2C signal levels and must be
      - RPI_BTN2_EXT
 
 USB
-***
+===
 
 The board has two USB connection options:
 
@@ -140,7 +140,7 @@ J29 pinout is given in Table 13.
    The USB port cannot provide enough current for all RF devices. Do not use USB as the regular supply source, see :doc:`power`.
 
 MCU Programming
-***************
+===============
 
 * J46 – boot selection header. Shorting J46 pulls the QSPI flash chip select low, and the MCU enters the BOOTSEL mode. In this mode the MCU appears to the host as external storage, and new firmware can be copied directly to it.
 * SW2 – MCU reset switch.

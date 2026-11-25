@@ -2,7 +2,7 @@ GPIOs and Control Signals
 #########################
 
 GPIO Connector
-**************
+==============
 
 The free GPIO pins of the board MCU (U115, RP2040) are available on the 12-pin PMOD connector J36. The signals pass through the level shifter U38.
 The allowed voltage range for this connector is 1.65 – 5.5 V. The voltage applied to pins 6 and 12 (VDD_CON_J36) sets the signal levels on the connector side of the level shifter.
@@ -53,10 +53,8 @@ The level shifter direction is controlled by MCU GPIO20. J36 pinout is given in 
 
 Two more MCU GPIOs (GPIO18 and GPIO19) can be routed to pins 9 and 10 of the SPI1 connector J28 by fitting R177 and R178, see :doc:`peripheralinterfaces`.
 
-.. TODO: the source manual gives 3.3 – 5 V for the J36 supply pins. Confirm the range with the designers.
-
 TDD Control
-***********
+===========
 
 The driver amplifiers can be switched on and off by external signals, for TDD operation. Each driver amplifier branch has a dedicated 2-pin header, listed in Table 9.
 
@@ -91,9 +89,5 @@ J37 and J40 are connected to the output of the on-board control buffer (U76, U78
 
 .. warning::
    The pin order of J37 and J40 is reversed compared to J18 and J23.
-
-.. TODO: the TDD headers are connected to nets that are also driven by the on-board control logic
-   (DA enable gates and buffers). Ask the designers how the GUI must be set up when the headers are
-   driven externally, and add it here.
 
 TDD operation can also be controlled through the MCU, using the TX/rx_1_EXT and TX/rx_2_EXT interrupt signals on pins 7 and 8 of the SPI1 connector J28 (see :doc:`peripheralinterfaces`), or from the GUI.

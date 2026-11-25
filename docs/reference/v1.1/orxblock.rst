@@ -7,7 +7,7 @@ By default, the ORX signal is used as the feedback (RFFB) signal for the SC1905 
 The description below is given for channel 1 (CH#1). Channel 2 (CH#2) is identical; the corresponding connectors are listed in brackets.
 
 Connectors
-**********
+==========
 
 * J4, ORX1 (J5, ORX2) – RF input. The signal is taken from the output of an external amplifier through a directional coupler.
 * J7, IFORX1 (J10, IFORX2) – optional IF output. It is not used in the default configuration (see :ref:`orx-reconfiguration`).
@@ -16,15 +16,16 @@ Connectors
    The maximum allowed input power at ORX1 and ORX2 is +37 dBm when the ORX attenuation is set above 23 dB. With lower attenuation, the LMS8001B input (+4 dBm maximum) becomes the limiting component. See :ref:`absolute-maximum-ratings`.
 
 Sub-blocks
-**********
+==========
 
 Starting from the ORX1 connector, the ORX path of CH#1 consists of the following sub-blocks:
 
 * Fixed 10 dB attenuator `PAT3060H-C-10DB-T1`_, which attenuates the signal from the external power amplifier.
 * Digital step attenuator `F1956NBGI8`_ (ORX1 Att.), 0 – 31.75 dB in steps of 0.25 dB.
 * Frequency conversion block, channel D (*Ch.D*) of the LMS8001B (U1), see :ref:`frequency-conversion`.
-* In the default configuration, the *Ch.D* output is routed to the RFFB input of the SC1905.
-  If the board is reconfigured with 0 |Omega| resistors, the signal is routed instead through the band-pass filter `BFCN-1860+`_ (pass band 1580 – 2200 MHz) to the IFORX1 connector.
+* Band-pass filter `BFCN-1860+`_ (U64), pass band 1580 – 2200 MHz.
+* In the default configuration, the filtered signal is routed to the RFFB input of the SC1905.
+  If the board is reconfigured with 0 |Omega| resistors, the signal is routed instead through a second `BFCN-1860+`_ filter (U137) to the IFORX1 connector.
 
 Instead of the ORX1 connector, the ORX path can take its input from the on-board directional coupler `HHM2955A1`_ at the driver amplifier output.
 This option is selected with 0 |Omega| resistors (see :ref:`orx-reconfiguration`).
@@ -32,7 +33,7 @@ This option is selected with 0 |Omega| resistors (see :ref:`orx-reconfiguration`
 The gain from ORX1 to IFORX1 is –17 dB, with ORX1 Att. set to 0 dB.
 
 Signal Paths
-************
+============
 
 The ORX path options are:
 
@@ -52,30 +53,30 @@ The ORX path options are:
      - J4 / PAT3060H-C-10DB-T1 / F1956NBGI8 / LMS8001B (CH#1, *Ch.D*) / BFCN-1860+ / SC1905 (CH#1)
    * - CH#1
      - B
-     - J4 / PAT3060H-C-10DB-T1 / F1956NBGI8 / LMS8001B (CH#1, *Ch.D*) / BFCN-1860+ / J7
+     - J4 / PAT3060H-C-10DB-T1 / F1956NBGI8 / LMS8001B (CH#1, *Ch.D*) / BFCN-1860+ / BFCN-1860+ / J7
    * - CH#1
      - C
      - HHM2955A1 / PAT3060H-C-10DB-T1 / F1956NBGI8 / LMS8001B (CH#1, *Ch.D*) / BFCN-1860+ / SC1905 (CH#1)
    * - CH#1
      - D
-     - HHM2955A1 / PAT3060H-C-10DB-T1 / F1956NBGI8 / LMS8001B (CH#1, *Ch.D*) / BFCN-1860+ / J7
+     - HHM2955A1 / PAT3060H-C-10DB-T1 / F1956NBGI8 / LMS8001B (CH#1, *Ch.D*) / BFCN-1860+ / BFCN-1860+ / J7
    * - CH#2
      - A
      - J5 / PAT3060H-C-10DB-T1 / F1956NBGI8 / LMS8001B (CH#2, *Ch.D*) / BFCN-1860+ / SC1905 (CH#2)
    * - CH#2
      - B
-     - J5 / PAT3060H-C-10DB-T1 / F1956NBGI8 / LMS8001B (CH#2, *Ch.D*) / BFCN-1860+ / J10
+     - J5 / PAT3060H-C-10DB-T1 / F1956NBGI8 / LMS8001B (CH#2, *Ch.D*) / BFCN-1860+ / BFCN-1860+ / J10
    * - CH#2
      - C
      - HHM2955A1 / PAT3060H-C-10DB-T1 / F1956NBGI8 / LMS8001B (CH#2, *Ch.D*) / BFCN-1860+ / SC1905 (CH#2)
    * - CH#2
      - D
-     - HHM2955A1 / PAT3060H-C-10DB-T1 / F1956NBGI8 / LMS8001B (CH#2, *Ch.D*) / BFCN-1860+ / J10
+     - HHM2955A1 / PAT3060H-C-10DB-T1 / F1956NBGI8 / LMS8001B (CH#2, *Ch.D*) / BFCN-1860+ / BFCN-1860+ / J10
 
 .. _orx-reconfiguration:
 
 Reconfiguration
-***************
+===============
 
 The board functionality can be changed by fitting or removing 0 |Omega| resistors or small impedance capacitors at several locations.
 The options are described in Table 6. Fitted components are marked F, components that are not fitted are marked NF, and the default state is marked DS.

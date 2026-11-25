@@ -163,7 +163,7 @@ The LimeRFE 8001P board features various connectors and test switches. The top a
        
        PIN4: MOSI_2 – Master output, slave input on SPI2 bus.
        
-       PIN5: Not connected.
+       PIN5: RESET – MCU reset.
        
        PIN6: GND
 
@@ -221,13 +221,11 @@ The LimeRFE 8001P board features various connectors and test switches. The top a
 
    * - J27
      - DC input
-     - 12 V power supply input for DC-DC converter in the LimeRFE 8001P board. Output from DC-DC converter is 5 V signal
-      
-       which could be used for the board supply.
-       
-       J27 (3 pin header), J30 (DC barrel jack) and J45 (2x3 power connector, 12 V from the PCIe board) are connectors 
-       
-       for 12 V power supply.
+     - 12 V power supply input (3 pin header).
+
+       It supplies the on-board DC-DC converter, which generates 5 V for the board supply.
+
+       The other 12 V inputs are J30 and J45.
        
        For further details about DC bias selection, please see :doc:`power`.
 
@@ -289,11 +287,11 @@ The LimeRFE 8001P board features various connectors and test switches. The top a
 
    * - J30
      - DC input
-     - 12 V power supply input for DC-DC converter in the LimeRFE 8001P board. Output from DC-DC converter is 5 V signal 
-      
-       which could be used for the board supply.
-       
-       J27, J30, J45 are connectors for 12 V power supply.
+     - 12 V power supply input (DC barrel jack).
+
+       It supplies the on-board DC-DC converter, which generates 5 V for the board supply.
+
+       The other 12 V inputs are J27 and J45.
        
        For further details about DC bias selection, please see :doc:`power`.
 
@@ -307,7 +305,7 @@ The LimeRFE 8001P board features various connectors and test switches. The top a
 
    * - J33
      - IF input
-     - This is UMC connector on the board channel 1 (CH#1), and LMS8001B’s channel A, (Ch.A). Default configuration for 
+     - This is U.FL connector on the board channel 1 (CH#1), and LMS8001B’s channel A, (Ch.A). Default configuration for 
       
        (CH#1, Ch.A) is up-conversion, where J33 is input and accordingly it is in IF frequency range. Output from 
        
@@ -319,7 +317,7 @@ The LimeRFE 8001P board features various connectors and test switches. The top a
 
    * - J34
      - RF output
-     - This is UMC connector on the board channel 1 (CH#1), and LMS8001B channel A, (Ch.A). Default configuration for 
+     - This is U.FL connector on the board channel 1 (CH#1), and LMS8001B channel A, (Ch.A). Default configuration for 
       
        (CH#1, Ch.A) is up-conversion, where J33 is input and accordingly it is in IF frequency range. Output from 
        
@@ -331,7 +329,7 @@ The LimeRFE 8001P board features various connectors and test switches. The top a
 
    * - J35
      - RF input
-     - This is UMC connector on LMS8001B on the board channel 2 (CH#2), and LMS8001B channel A, (Ch.A). 
+     - This is U.FL connector on LMS8001B on the board channel 2 (CH#2), and LMS8001B channel A, (Ch.A). 
      
        Default configuration for (CH#2, Ch.A) is down-conversion, where J35 is input and accordingly it is in RF 
        
@@ -361,7 +359,7 @@ The LimeRFE 8001P board features various connectors and test switches. The top a
        
        PIN5: GND
        
-       PIN6: PIN6 provides DC supply and must be in range 3.3 – 5 V
+       PIN6: External DC supply, 3.3 – 5 V
        
        PIN7: MCU_GPIO26_EXT
        
@@ -373,7 +371,7 @@ The LimeRFE 8001P board features various connectors and test switches. The top a
        
        PIN11: GND
        
-       PIN12: PIN12 provides DC supply and must be in range 3.3 – 5 V
+       PIN12: External DC supply, 3.3 – 5 V
 
    * - J37
      - Digital signal input
@@ -413,9 +411,9 @@ The LimeRFE 8001P board features various connectors and test switches. The top a
 
    * - J43
      - Clock input
-     - Optional external clock input (EXTCLKIN) for the SC1905 on channel 1. Not fitted (R403 not fitted); the SC1905 uses 
-       
-       the on-board 20 MHz crystal X1.
+     - Optional external clock input (EXTCLKIN) for the SC1905 on channel 1.
+
+       Not connected by default (R403 not fitted); the SC1905 uses the on-board 20 MHz crystal X1.
 
    * - J44
      - Does not exist
@@ -423,11 +421,11 @@ The LimeRFE 8001P board features various connectors and test switches. The top a
 
    * - J45
      - DC input
-     - 12 V power supply input for DC-DC converter in the LimeRFE 8001P board. Output from DC-DC converter is 5 V signal 
-      
-       which could be used for the board supply.
-       
-       J27, J30, J45 are connectors for 12 V power supply.
+     - 12 V power supply input (2x3 pin power connector).
+
+       It supplies the on-board DC-DC converter, which generates 5 V for the board supply.
+
+       The other 12 V inputs are J27 and J30.
        
        For further details about DC bias selection, please see :doc:`power`.
 
@@ -459,9 +457,9 @@ The LimeRFE 8001P board features various connectors and test switches. The top a
 
    * - J50
      - Clock input
-     - Optional external clock input (EXTCLKIN) for the SC1905 on channel 2. Not fitted (R502 not fitted); the SC1905 uses 
-       
-       the on-board 20 MHz crystal X2.
+     - Optional external clock input (EXTCLKIN) for the SC1905 on channel 2.
+
+       Not connected by default (R502 not fitted); the SC1905 uses the on-board 20 MHz crystal X2.
 
    * - J51
      - Does not exist
@@ -489,7 +487,7 @@ The LimeRFE 8001P board features various connectors and test switches. The top a
 
    * - J57
      - IF output
-     - This is UMC connector on the board channel 2 (CH#2), and LMS8001B’s channel A, (Ch.A). Default configuration for 
+     - This is U.FL connector on the board channel 2 (CH#2), and LMS8001B’s channel A, (Ch.A). Default configuration for 
       
        (CH#2, Ch.A) is down-conversion, where J35 is input and accordingly it is in RF frequency range. Output from 
        
@@ -542,5 +540,3 @@ The LimeRFE 8001P board features various connectors and test switches. The top a
    * - CON1
      - USB connector
      - USB connector, type B micro.
-
-.. TODO: confirm with the designers what the J12, J25 and J47 jumper shunts are used for.

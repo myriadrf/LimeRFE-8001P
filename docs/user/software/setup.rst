@@ -11,90 +11,28 @@ The LimeRFE 8001P basic setup procedure consists of four steps:
 Before starting, connect the power supply and set the JP1 and JP2 jumpers, see :doc:`/user/setup`.
 
 Establishing Connection
-***********************
+=======================
 
-There are two ways to control and communicate with the LimeRFE 8001P board:
-
-* **Direct (USB)** – the board is connected to the host PC through the micro USB connector (CON1).
-* **SDR** – the board is connected to a master control board through the SPI1 connector (J28). The master control board is the SPI master and the LimeRFE 8001P is the SPI slave.
-
-From the user's point of view there is no difference in how the board is controlled after the connection is established.
-
-USB
-===
+The LimeRFE 8001P board is connected to the host PC through the micro USB connector (CON1):
 
 #. Connect the LimeRFE 8001P micro USB connector (CON1) to the host PC.
-#. Open the LimeRFE 8001P GUI. The main control window appears (Figure 4). Check **Direct (USB)** in the Communication panel.
-#. Click the **Refresh** button in the USB panel. All available COM ports appear in the drop-down menu.
-#. Select the COM port of the LimeRFE 8001P board and click the **Open** button in the Port panel.
-#. Three lines of short messages appear in the Message Display panel, confirming a successful connection.
-
-SDR
-===
-
-This section describes the connection when the LimeRFE 8001P is controlled through the LimeSDR-PCIe-5G board.
-The online technical documentation for LimeSDR-PCIe-5G is available at `LimeSDR-PCIe-5G documentation`_.
-
-The boards are connected with a 7-wire data cable, between the J19 PMOD B connector of the LimeSDR-PCIe-5G and the J28 connector of the LimeRFE 8001P.
-At both cable ends the connector pins have the same pin numbers and signal names, given in Table 4. The SPI clock rate is fixed at 1.25 MHz.
-
-.. note::
-   Please use a shielded data cable when connecting the two boards.
-
-.. list-table:: Table 4. Connection between LimeSDR-PCIe-5G J19 and LimeRFE 8001P J28
-   :header-rows: 1
-
-   * - Pin
-     - Signal
-     - Direction (LimeRFE 8001P)
-     - Description
-   * - 1
-     - SS_1_EXT
-     - Digital input, CMOS 3.3 V
-     - SPI slave select
-   * - 2
-     - MOSI_1_EXT
-     - Digital input, CMOS 3.3 V
-     - SPI master output, slave input
-   * - 3
-     - MISO_1_EXT
-     - Digital output, CMOS 3.3 V
-     - SPI master input, slave output
-   * - 4
-     - SCLK_1_EXT
-     - Digital input, CMOS 3.3 V
-     - SPI clock, fixed at 1.25 MHz
-   * - 5
-     - GND
-     - Ground
-     - Ground
-   * - 7
-     - TX/rx_1_EXT
-     - Digital input, CMOS 3.3 V
-     - TX/RX control, channel 1
-   * - 8
-     - TX/rx_2_EXT
-     - Digital input, CMOS 3.3 V
-     - TX/RX control, channel 2
-
-#. Connect the LimeSDR-PCIe-5G to the host PC and open the Lime Suite GUI (LimeSuite_5G version, see :doc:`index`). Configure the LimeSDR-PCIe-5G following its documentation.
-#. Connect the LimeRFE 8001P J28 connector to the LimeSDR-PCIe-5G J19 connector.
-#. In the Lime Suite GUI, open **Modules** |rarr| **LimeRFE 8001P**. The LimeRFE 8001P main control window appears, identical to Figure 4.
-#. Check **SDR** in the Communication panel and click the **Open** button in the Port panel.
+#. Open the LimeRFE 8001P GUI. The main control window appears (Figure 5 in :doc:`gui`). Check **Direct (USB)** in the Communication panel.
+#. Click the **Refresh** button in the USB panel. All available serial ports (``/dev/ttyACM*``) appear in the drop-down menu.
+#. Select the serial port of the LimeRFE 8001P board (usually ``/dev/ttyACM0``) and click the **Open** button in the Port panel.
 #. Three lines of short messages appear in the Message Display panel, confirming a successful connection.
 
 Initial RF Configuration
-************************
+========================
 
 After the connection is established, the RF devices on the board (amplifiers, switches and attenuators) are configured in the Data panel:
 
 #. Click the **Read** button in the Data panel. The current state of the board control register is shown (see :doc:`gui`).
-#. Open the Detailed tab and set the fields as given in Table 5, for the selected channel, mode and driver amplifier branch.
+#. Open the Detailed tab and set the fields as given in Table 4, for the selected channel, mode and driver amplifier branch.
 #. Click the **Apply** button to write the configuration to the board.
 
 In TX mode, pay attention to the TX1 Att. [dB] and TX2 Att. [dB] values. After reset both are set to the maximum attenuation, 31.75 dB.
 
-.. table:: Table 5. Recommended values of the initial RF configuration (Data panel, Detailed tab)
+.. table:: Table 4. Recommended values of the initial RF configuration (Data panel, Detailed tab)
 
    +---------+----------+------------+----------------------+----------------------+
    | **Ch.** | **Mode** | **Branch** | **Main bits**        | **Additional bits**  |
@@ -181,22 +119,22 @@ In TX mode, pay attention to the TX1 Att. [dB] and TX2 Att. [dB] values. After r
    +---------+----------+------------+----------------------+----------------------+
 
 LMS8001B
-********
+========
 
 After the initial RF configuration, configure and start the LMS8001B:
 
 #. Select the channel (Channel 1 or Channel 2) in the **Which channel is controlled in GUI** panel.
 #. In the Detailed tab of the Data panel, check LMS8001_#1_RESETn for channel 1, or LMS8001_#2_RESETn for channel 2, and click **Apply**. This takes the LMS8001B out of its reset state.
 #. Open **Modules** |rarr| **LMS8001**. A new window appears, where the LMS8001B is configured.
-#. Open the **LMS8001B - High-Linearity Mixer** tab, shown in Figure 7, and select the channel: CHANNEL B, C or D.
+#. Open the **LMS8001B - High-Linearity Mixer** tab, shown in Figure 8, and select the channel: CHANNEL B, C or D.
 
    .. note::
       Channel C is used for TX, channel D for ORX and channel B for RX. Channel A is not used in normal operation of the LimeRFE 8001P.
 
 #. Turn on the mixer of the selected channel by unchecking the BIAS_PD and LOBUF_PD fields in the Configuration panel.
-#. Open the **PLL Profiles** tab, shown in Figure 8, and enter the LO frequency.
+#. Open the **PLL Profiles** tab, shown in Figure 9, and enter the LO frequency.
 #. Click the **Smart Tune** button to tune the PLL.
-#. If PLL tuning is successful, confirmation messages appear in the Message Display panel and the Active Profile Status shows Lock (left side of the window in Figure 8).
+#. If PLL tuning is successful, confirmation messages appear in the Message Display panel and the Active Profile Status shows Lock (left side of the window in Figure 9).
 #. Deliver the LO signal to the mixers by checking the *Ch.B*, *Ch.C* and/or *Ch.D* fields in the LO Distribution panel.
 
 The basic LMS8001B setup is now complete.
@@ -204,25 +142,25 @@ The basic LMS8001B setup is now complete.
 .. figure:: /images/LimeRFE-8001P_GUI_LMS8001P.png
   :width: 600
 
-  Figure 7: LMS8001 control window – LMS8001B - High-Linearity Mixer tab
+  Figure 8: LMS8001 control window – LMS8001B - High-Linearity Mixer tab
 
 .. figure:: /images/LimeRFE-8001P_GUI_PLL.png
   :width: 600
 
-  Figure 8: LMS8001 control window – PLL Profiles tab
+  Figure 9: LMS8001 control window – PLL Profiles tab
 
 SC1905
-******
+======
 
 The final step is the setup and start of the SC1905:
 
 #. Select the channel (Channel 1 or Channel 2) in the **Which channel is controlled in GUI** panel of the main control window.
 #. In the Detailed tab of the Data panel, check SC1905_#1_RESETn or SC1905_#2_RESETn, depending on the selected channel, and click **Apply**. This takes the SC1905 out of its reset state.
-#. Open the **SC1905** tab. The SC1905 control window appears, as shown in Figure 9.
+#. Open the **SC1905** tab. The SC1905 control window appears, as shown in Figure 10.
    This part of the GUI is based on the original Maxim GUI for the SC1905 evaluation boards, and has most of its functions.
-#. Click the **Force Update** button. "SC1905" must appear in the Product Version field, and the FW Version and Frequency Range fields in the IC Configuration panel should be the same as, or similar to, Figure 9.
+#. Click the **Force Update** button. "SC1905" must appear in the Product Version field, and the FW Version and Frequency Range fields in the IC Configuration panel should be the same as, or similar to, Figure 10.
    This confirms the communication between the MCU and the SC1905.
-#. The Frequency Range field in the Configure Application panel must be the same as in Figure 9.
+#. The Frequency Range field in the Configure Application panel must be the same as in Figure 10.
    For finer frequency scanning, enter the Min Frequency and Max Frequency values. It is recommended to use 2.5 x the signal bandwidth below and above the IF carrier frequency.
    For example, for a 2 GHz IF carrier and 20 MHz signal bandwidth, the values are 1950 and 2050.
 #. The SC1905 linearizer is now configured and started.
@@ -241,8 +179,7 @@ The final step is the setup and start of the SC1905:
 .. figure:: /images/LimeRFE-8001P_GUI_SC1905.png
   :width: 600
 
-  Figure 9: SC1905 control window
+  Figure 10: SC1905 control window
 
 For a complete setup example, see :doc:`/user/examples/index`.
 
-.. _LimeSDR-PCIe-5G documentation: https://pcie5g.myriadrf.org/

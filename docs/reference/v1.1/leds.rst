@@ -1,12 +1,12 @@
 LEDs
 ####
 
-The LimeRFE 8001P board includes six indicator LEDs. Their positions on the board are shown in Figure 8.
+The LimeRFE 8001P board includes seven indicator LEDs. Their positions on the board are shown in Figure 8.
 
 .. figure:: /images/LimeRFE-8001P_v1.1_leds.png
   :width: 600
 
-  Figure 8. LimeRFE 8001P v1.1 indication top LEDs 
+  Figure 8: LimeRFE 8001P v1.1 indication top LEDs 
 
 LED functions are described in Table 7.
 
@@ -29,6 +29,4 @@ LED functions are described in Table 7.
      - +5V_RF DC voltage indicator
    * - LD5
      - +5V DC voltage indicator
-   * - LD6
-     - ADF4002 (U18) MUXOUT indicator
 
