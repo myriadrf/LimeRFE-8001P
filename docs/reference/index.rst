@@ -9,4 +9,5 @@ Please ensure to select the correct version for your hardware and see the change
    :maxdepth: 1
 
    v1.1 <v1.1/index>
+   v1.0 <v1.0/index>
    changelog
